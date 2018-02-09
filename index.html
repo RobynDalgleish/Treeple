@@ -36,7 +36,7 @@
 
         <div class="wrapper">
 
-            <form class="soil">
+            <form class="soil_form">
                 <fieldset class="fieldset">
                     <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
                     <label for="clay">dense clay</label>
@@ -47,11 +47,11 @@
                     <input type="radio" name="soil" id="sand" value="sand">
                 </fieldset>
                 <div class="submit_container">
-                    <input type="submit" value="give 'er!'">
+                    <input  class="soil_submit" type="submit" value="give 'er!'">
                 </div>
             </form>
 
-            <form class="moisture">
+            <form class="moisture_form">
                 <fieldset class="fieldset">
                     <p><i class="fas fa-tint"></i>give them water! how much?</p>
                     <label for="dry">just a trickle</label>
@@ -62,11 +62,11 @@
                     <input type="radio" name="moisture" id="wet" value="wet">
                 </fieldset>
                 <div class="submit_container">
-                    <input type="submit" value="give 'er!'">
+                    <input class="moisture_submit" type="submit" value="give 'er!'">
                 </div>
             </form>
 
-            <form class="shade">
+            <form class="shade_form">
                 <fieldset class="fieldset">
                     <p><i class="fas fa-sun"></i>give them sun! how much?</p>
                     <label for="shadow">Stick to the shadows...</label>
@@ -77,22 +77,22 @@
                     <input type="radio" name="shade" id="full_sun" value="full_sun">
                 </fieldset>
                 <div class="submit_container">
-                    <input type="submit" value="give 'er!'">
+                    <input class="shade_submit" type="submit" value="give 'er!'">
                 </div>
             </form>
 
-            <form class="size">
+            <form class="size_form">
                 <fieldset class="fieldset">
                     <p><i class="fas fa-sun"></i>give them room to grow! how much?</p>
                     <label for="small">a tiny nook, but it's enough</label>
-                    <input type="radio" name="size" id="small" value="size">
+                    <input type="radio" name="size" id="small" value="small">
                     <label for="medium">a cofortable amount of space</label>
                     <input type="radio" name="size" id="medium" value="medium">
                     <label for="large">sky's the limit!</label>
                     <input type="radio" name="size" id="large" value="large">
                 </fieldset>
                 <div class="submit_container">
-                    <input type="submit" value="give 'er!'">
+                    <input class="size_submit" type="submit" value="give 'er!'">
                 </div>
             </form>
 
@@ -180,7 +180,7 @@
 
     </main>
 
-    
+    <script src="scripts/underscore.js"></script>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="scripts/script.js"></script>
 </body>
