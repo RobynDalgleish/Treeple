@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link type="image/png" href="assets/favicon.png" rel="icon">
-    <title>Treeple</title>
+    <title>treeple</title>
 </head>
 <body>
 
     <header>
         <div class="wrapper">
             <h1>
-                <i class="fas fa-tree"></i>treeple pets
+                <i class="fas fa-tree"></i>treeple
                 <i class="fas fa-tree"></i>
             </h1>
-            <p>how you care for your Treeple dictates what kind of treeple it will grow up to be!</p>
+            <p>how you care for your treeple dictates what kind of treeple it will grow up to be!</p>
             <div class="submit_container">
                 <input class="start_game" type="submit" value="grow a treeple!">
             </div>
@@ -27,9 +27,15 @@
     <main>
 
         <div class="wrapper">
-
+            <div class="hurry plant">hurry! Plant me!</div>
+            <div class="hurry water">hurry! Water me!</div>
             <figure class="sprite">
-                <img src="" alt="">
+                <h1 class="main image1 hidden">image!!!</h1>
+                <h1 class="main image2 hidden">image2!!!</h1>
+                <h1 class="image3 hidden">image3!!!</h1>
+
+
+                
             </figure>
             
         </div>
@@ -40,11 +46,11 @@
                 <fieldset class="fieldset">
                     <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
                     <label for="clay">dense clay</label>
-                    <input type="radio" name="soil" id="clay" value="clay">
+                    <input type="radio" name="soil" id="clay" value="clay" required>
                     <label for="loam">rich loam</label>
-                    <input type="radio" name="soil" id="loam" value="loam">
+                    <input type="radio" name="soil" id="loam" value="loam" required>
                     <label for="sand">porous sand</label>
-                    <input type="radio" name="soil" id="sand" value="sand">
+                    <input type="radio" name="soil" id="sand" value="sand" required>
                 </fieldset>
                 <div class="submit_container">
                     <input  class="soil_submit" type="submit" value="give 'er!'">
@@ -55,11 +61,11 @@
                 <fieldset class="fieldset">
                     <p><i class="fas fa-tint"></i>give them water! how much?</p>
                     <label for="dry">just a trickle</label>
-                    <input type="radio" name="moisture" id="dry" value="dry">
+                    <input type="radio" name="moisture" id="dry" value="dry" required>
                     <label for="moist">a good splash</label>
-                    <input type="radio" name="moisture" id="moist" value="moist">
+                    <input type="radio" name="moisture" id="moist" value="moist" required>
                     <label for="wet">monsoon!</label>
-                    <input type="radio" name="moisture" id="wet" value="wet">
+                    <input type="radio" name="moisture" id="wet" value="wet" required>
                 </fieldset>
                 <div class="submit_container">
                     <input class="moisture_submit" type="submit" value="give 'er!'">
@@ -70,11 +76,11 @@
                 <fieldset class="fieldset">
                     <p><i class="fas fa-sun"></i>give them sun! how much?</p>
                     <label for="shadow">Stick to the shadows...</label>
-                    <input type="radio" name="shade" id="shadow" value="shadow">
+                    <input type="radio" name="shade" id="shadow" value="shadow" required>
                     <label for="partial_shade">a little dose of sun</label>
-                    <input type="radio" name="shade" id="partial_shade" value="partial_shade">
+                    <input type="radio" name="shade" id="partial_shade" value="partial_shade" required>
                     <label for="full_sun">No cover!</label>
-                    <input type="radio" name="shade" id="full_sun" value="full_sun">
+                    <input type="radio" name="shade" id="full_sun" value="full_sun" required>
                 </fieldset>
                 <div class="submit_container">
                     <input class="shade_submit" type="submit" value="give 'er!'">
@@ -85,11 +91,11 @@
                 <fieldset class="fieldset">
                     <p><i class="fas fa-sun"></i>give them room to grow! how much?</p>
                     <label for="small">a tiny nook, but it's enough</label>
-                    <input type="radio" name="size" id="small" value="small">
+                    <input type="radio" name="size" id="small" value="small" required>
                     <label for="medium">a cofortable amount of space</label>
-                    <input type="radio" name="size" id="medium" value="medium">
+                    <input type="radio" name="size" id="medium" value="medium" required>
                     <label for="large">sky's the limit!</label>
-                    <input type="radio" name="size" id="large" value="large">
+                    <input type="radio" name="size" id="large" value="large" required>
                 </fieldset>
                 <div class="submit_container">
                     <input class="size_submit" type="submit" value="give 'er!'">

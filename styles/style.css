@@ -145,8 +145,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden; }
 
-form, .result {
+form, .result, .hurry {
   display: none; }
 
 .active {
   display: block; }
+
+.hidden {
+  display: none; }
+
+.hidden_important {
+  display: none; }
