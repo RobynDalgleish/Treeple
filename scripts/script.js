@@ -73,78 +73,87 @@ $(function () {
 
     $('.start_game').on('click', function (event) {
         event.preventDefault();
-        $('header').fadeOut();
+        $('header').addClass("hidden");
         $('.sprite').fadeIn();
         $('.soil_form').fadeIn();   
-        start_timer("plant"); 
-        $(".image1").removeClass("hidden");
+        start_timer("plant_prompt"); 
+        $(".normal_seed_float").toggleClass("hidden");
     });
 
     $('.soil_form').on('submit', function (event) {
         event.preventDefault();
+        clearInterval(treeple.interval)
         // To get the addTally function to run for each seperate group of questions (which are connected by radio buttons with the same 'name', pass the addTally function a parameter that matches the question group similarity (in this case, 'soil'. Otherwise, when the user answers for the next group of questions, the code will detect the radio button that the user clicked before it (it is still in the html, just hidden), and duplicate that answer in the tally.)
         add_to_tally('soil');
         $('.soil_form').fadeOut();
         $('.moisture_form').fadeIn();
-        // reset timer
+        start_timer("water_prompt");
     });
 
     $('.moisture_form').on('submit', function (event) {
         event.preventDefault();
+        clearInterval(treeple.interval)
         add_to_tally('moisture');
         $('.moisture_form').fadeOut();
         $('.shade_form').fadeIn();
-        // reset timer
+        start_timer("shade_prompt"); 
 
     });
 
     $('.shade_form').on('submit', function (event) {
         event.preventDefault();
+        clearInterval(treeple.interval)
         add_to_tally('shade');
         $('.shade_form').fadeOut();
         $('.size_form').fadeIn();
-        // reset timer
+        start_timer("size_prompt");
     });
 
     $('.size_form').on('submit', function (event) {
         event.preventDefault();
-        add_to_tally('size');
+        clearInterval(treeple.interval);
         $('.size_form').fadeOut();
         get_largest_tally('tally');
-        // end timer
+        $('.sprite').toggleClass("hidden")
     });
 
     function start_timer(hurry_promt_class) {
-        let set_timer = 30;
-        setInterval(function () {
+        let set_timer = 25;
+        // Makes code inside the setInterval function run on the specified interval. Ex: every second, set_timer = set_timer - 1.
+        treeple.interval = setInterval(function () {
             set_timer = set_timer - 1;
             $(".main").toggleClass("hidden");
-            if (set_timer === 20) {
-                $(`.hurry.${hurry_promt_class}`).fadeIn();
-                $(".image3").removeClass("hidden")
-                $(".main").addClass("hidden_important")
 
-                // Madee it display a div at 20seconds. Use setTimeout to make the div dissapear on a 5 sec delay
+            if(set_timer === 25) {
+                $(".happy_seed").toggleClass("hidden")
+                $(".main").toggleClass("hidden_important")
+                // Make it display a div at 20seconds. Use setTimeout to make the div dissapear on a 3 sec delay
                 setTimeout(function () {
-                    $(`.hurry.${hurry_promt_class}`).fadeOut();
-                    $(".image3").addClass("hidden");
+                    $(".happy_seed").addClass("hidden");
                     $(".main").removeClass("hidden_important")
                     // denotes miliseconds
                 }, 5000);
-            }
-
+            };
+            
+            if (set_timer === 15) {
+                $(`.hurry.${hurry_promt_class}`).fadeIn();
+                $(".hurry_seed").toggleClass("hidden")
+                $(".main").addClass("hidden_important")
+                setTimeout(function () {
+                    $(`.hurry.${hurry_promt_class}`).fadeOut();
+                    $(".hurry_seed").toggleClass("hidden");
+                    $(".main").toggleClass("hidden_important")
+                }, 5000);
+            };
             if (set_timer === 0) {
-                console.log('zero')
                 $("input").attr("disabled", true);
-                // $(dead image).fadeIn
+                $(".dead_seed").toggleClass("hidden")
+                $(".main").toggleClass("hidden_important")
             }
-
             if(set_timer === -5) {
                 location.reload();
             }
         }, 1000);
-        
-
     }
 
     // 'question_group_input_name' is a place holder. We do not want to be too specific (for example, naming it 'soil'), because we want this function to work for all the different question groups.

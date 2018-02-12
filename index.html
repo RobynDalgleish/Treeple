@@ -7,106 +7,98 @@
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link type="image/png" href="assets/favicon.png" rel="icon">
-    <title>treeple</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Annie+Use+Your+Telescope|Nanum+Pen+Script" rel="stylesheet">
+    <title>TREEPLE</title>
 </head>
 <body>
 
-    <header>
+    <header class="intro">
         <div class="wrapper">
             <h1>
                 <i class="fas fa-tree"></i>treeple
                 <i class="fas fa-tree"></i>
             </h1>
             <p>how you care for your treeple dictates what kind of treeple it will grow up to be!</p>
-            <div class="submit_container">
-                <input class="start_game" type="submit" value="grow a treeple!">
-            </div>
+
+            <button class="start_game" type="submit" form="soil_form" value="Submit">grow a treeple!</button>
         </div>
     </header>
 
     <main>
 
         <div class="wrapper">
-            <div class="hurry plant">hurry! Plant me!</div>
-            <div class="hurry water">hurry! Water me!</div>
             <figure class="sprite">
-                <h1 class="main image1 hidden">image!!!</h1>
-                <h1 class="main image2 hidden">image2!!!</h1>
-                <h1 class="image3 hidden">image3!!!</h1>
+                <p class=" hidden hurry plant_prompt">hurry! plant me!</p>
+                <p class="hidden hurry water_prompt">i need water, asap!</p>
+                <p class="hidden hurry shade_prompt">quick! i need sun!</p>
+                <p class="hidden hurry size_prompt">i'm so squished! i need room now!</p>
 
+                <img src="assets/TamaSeed_SeedNeutral1.png" alt="a cute li'l happy treeple seed, floating" class="hidden main normal_seed_float">
+                <img src="assets/TamaSeed_SeedNeutral2.png" alt="a cute li'l happy treeple seed, scampering" class="hidden main normal_seed_run">
 
-                
+                <img src="assets/TamaSeed_SeedSick.png" alt="a worried li'l treeple seed who looks ill" class="hidden hurry_seed">
+                <img src="assets/TamaSeed_SeedHappy.png" alt="a cute li'l treeple seed who looks extra happy, and very thankful" class="hidden happy_seed">
+                <img src="assets/TamaSeed_SeedDead.png" alt="a pallid li'l treeple seed who has passed" class="hidden dead_seed">
             </figure>
             
         </div>
 
         <div class="wrapper">
 
-            <form class="soil_form">
-                <fieldset class="fieldset">
-                    <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
-                    <label for="clay">dense clay</label>
-                    <input type="radio" name="soil" id="clay" value="clay" required>
-                    <label for="loam">rich loam</label>
-                    <input type="radio" name="soil" id="loam" value="loam" required>
-                    <label for="sand">porous sand</label>
-                    <input type="radio" name="soil" id="sand" value="sand" required>
-                </fieldset>
-                <div class="submit_container">
-                    <input  class="soil_submit" type="submit" value="give 'er!'">
-                </div>
+            <form class="hidden soil_form" id="soil_form">
+                <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
+                <label class="soil" for="clay">dense clay</label>
+                <input type="radio" name="soil" id="clay" value="clay" autocomplete="off" required>
+                <label class="soil" for="loam">rich loam</label>
+                <input type="radio" name="soil" id="loam" value="loam" autocomplete="off" required>
+                <label class="soil" for="sand">porous sand</label>
+                <input type="radio" name="soil" id="sand" value="sand" autocomplete="off" required>
+
+                <button class="soil_submit" type="submit" form="soil_form" value="Submit">give 'er!</button>
             </form>
 
-            <form class="moisture_form">
-                <fieldset class="fieldset">
-                    <p><i class="fas fa-tint"></i>give them water! how much?</p>
-                    <label for="dry">just a trickle</label>
-                    <input type="radio" name="moisture" id="dry" value="dry" required>
-                    <label for="moist">a good splash</label>
-                    <input type="radio" name="moisture" id="moist" value="moist" required>
-                    <label for="wet">monsoon!</label>
-                    <input type="radio" name="moisture" id="wet" value="wet" required>
-                </fieldset>
-                <div class="submit_container">
-                    <input class="moisture_submit" type="submit" value="give 'er!'">
-                </div>
+            <form class="hidden moisture_form" id="moisture_form">
+                <p><i class="fas fa-tint"></i>give them water! how much?</p>
+                <label for="dry">just a trickle</label>
+                <input type="radio" name="moisture" id="dry" value="dry" autocomplete="off" required>
+                <label for="moist">a good splash</label>
+                <input type="radio" name="moisture" id="moist" value="moist" autocomplete="off" required>
+                <label for="wet">monsoon!</label>
+                <input type="radio" name="moisture" id="wet" value="wet" autocomplete="off" required>
+
+                <button class="moisture_submit" type="submit" form="moisture_form" value="Submit">give 'er!</button>
             </form>
 
-            <form class="shade_form">
-                <fieldset class="fieldset">
-                    <p><i class="fas fa-sun"></i>give them sun! how much?</p>
-                    <label for="shadow">Stick to the shadows...</label>
-                    <input type="radio" name="shade" id="shadow" value="shadow" required>
-                    <label for="partial_shade">a little dose of sun</label>
-                    <input type="radio" name="shade" id="partial_shade" value="partial_shade" required>
-                    <label for="full_sun">No cover!</label>
-                    <input type="radio" name="shade" id="full_sun" value="full_sun" required>
-                </fieldset>
-                <div class="submit_container">
-                    <input class="shade_submit" type="submit" value="give 'er!'">
-                </div>
+            <form class="hidden shade_form" id="shade_form">
+                <p><i class="fas fa-sun"></i>give them sun! how much?</p>
+                <label for="shadow">stick to the shadows...</label>
+                <input type="radio" name="shade" id="shadow" value="shadow" autocomplete="off" required>
+                <label for="partial_shade">a little dose of sun</label>
+                <input type="radio" name="shade" id="partial_shade" value="partial_shade" autocomplete="off" required>
+                <label for="full_sun">no cover!</label>
+                <input type="radio" name="shade" id="full_sun" value="full_sun" autocomplete="off" required>
+
+                <button class="shade_submit" type="submit" form="shade_form" value="Submit">give 'er!</button>
             </form>
 
-            <form class="size_form">
-                <fieldset class="fieldset">
-                    <p><i class="fas fa-sun"></i>give them room to grow! how much?</p>
-                    <label for="small">a tiny nook, but it's enough</label>
-                    <input type="radio" name="size" id="small" value="small" required>
-                    <label for="medium">a cofortable amount of space</label>
-                    <input type="radio" name="size" id="medium" value="medium" required>
-                    <label for="large">sky's the limit!</label>
-                    <input type="radio" name="size" id="large" value="large" required>
-                </fieldset>
-                <div class="submit_container">
-                    <input class="size_submit" type="submit" value="give 'er!'">
-                </div>
+            <form class="hidden size_form" id="size_form">
+                <p><i class="fas fa-arrows-alt-v"></i>give them room to grow! how much?</p>
+                <label for="small">a tiny nook, but it's enough</label>
+                <input type="radio" name="size" id="small" value="small" autocomplete="off" required>
+                <label for="medium">a cofortable amount of space</label>
+                <input type="radio" name="size" id="medium" value="medium" autocomplete="off" required>
+                <label for="large">sky's the limit!</label>
+                <input type="radio" name="size" id="large" value="large" autocomplete="off" required>
+
+
+                <button class="size_submit" type="submit" form="size_form" value="Submit">give 'er!</button>
             </form>
 
         </div>
 
         <div class="wrapper">
             <section>
-                <div class="result black_walnut">
+                <div class="hidden black_walnut">
                     <img src="" alt="">
                     <h1>you grew a black walnut treeple!</h1>
                     <ul>
@@ -121,7 +113,7 @@
                     </p>
                 </div>
 
-                <div class="result black_spruce">
+                <div class="hidden black_spruce">
                     <img src="" alt="">
                     <h1>you grew a black spruce treeple!</h1>
                     <ul>
@@ -136,7 +128,7 @@
                     </p>
                 </div>
 
-                <div class="result jack_pine">
+                <div class="hidden jack_pine">
                     <img src="" alt="">
                     <h1>you grew a jack pine treeple!</h1>
                     <ul>
@@ -151,7 +143,7 @@
                     </p>
                 </div>
 
-                <div class="result eastern_white_cedar">
+                <div class="hidden eastern_white_cedar">
                     <img src="" alt="">
                     <h1>you grew an eastern white cedar treeple!</h1>
                     <ul>
@@ -166,7 +158,7 @@
                     </p>
                 </div>
 
-                <div class="result american_beech">
+                <div class="hidden american_beech">
                     <img src="" alt="">
                     <h1>you grew an american beech treeple!</h1>
                     <ul>
@@ -180,6 +172,8 @@
                         The distinctive triangular nuts are eaten by people as well as wildlife.
                     </p>
                 </div>
+
+                <input class="hidden end_game" type="submit" value="grow another!">
 
             </section>
         </div>

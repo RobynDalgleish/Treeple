@@ -4,8 +4,18 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
+body {
+    // font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Amatic SC', cursive;
+    // font-family: 'Annie Use Your Telescope', cursive;
+}
 
-form, .result, .hurry {
+// To make appear and disappear:
+.hidden {
+    display: none;
+}
+
+.hidden_important {
     display: none;
 }
 
@@ -13,10 +23,51 @@ form, .result, .hurry {
     display: block;
 }
 
-.hidden {
-    display: none;
+// intro/start game page styles
+
+.svg-inline--fa.fa-tree {
+    color: #7C7BB2;
 }
 
-.hidden_important {
-    display: none;
+.intro .wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.start_game {
+    background-image: url("../assets/TamaSeed_SeedNeutral1.png");
+    background-position: 45% 20%;
+    height: 100px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    box-shadow:10px 10px 0px 0 #7C7BB2;
+    
+}
+
+// sprite styles
+
+.sprite {
+    height: 50vh;
+        img {
+            object-fit: contain;
+            height: 100%;
+        }
+}
+
+// general radio button styles
+input[type=radio] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+// soil question button styles
+.soil:hover {
+    background-color: #A5C992;
 }
