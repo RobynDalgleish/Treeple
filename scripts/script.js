@@ -237,6 +237,7 @@ treeple.new_game = function(){
     $('.end_game').on('click', function (e) {
         location.reload();
     });
+    $('.wrapper_results').toggleClass(hidden);
 };
 
 treeple.init = function() {
