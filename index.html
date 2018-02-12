@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link type="image/png" href="assets/favicon.png" rel="icon">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Annie+Use+Your+Telescope|Nanum+Pen+Script" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Annie+Use+Your+Telescope" rel="stylesheet">
     <title>TREEPLE</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
 
     <main>
 
-        <div class="wrapper">
+        <div class="wrapper_sprite">
             <figure class="sprite">
                 <p class=" hidden hurry plant_prompt">hurry! plant me!</p>
                 <p class="hidden hurry water_prompt">i need water, asap!</p>
@@ -43,63 +43,68 @@
             
         </div>
 
-        <div class="wrapper">
+        <div class="wrapper_questions">
 
             <form class="hidden soil_form" id="soil_form">
                 <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
-                <label class="soil" for="clay">dense clay</label>
-                <input type="radio" name="soil" id="clay" value="clay" autocomplete="off" required>
-                <label class="soil" for="loam">rich loam</label>
-                <input type="radio" name="soil" id="loam" value="loam" autocomplete="off" required>
-                <label class="soil" for="sand">porous sand</label>
-                <input type="radio" name="soil" id="sand" value="sand" autocomplete="off" required>
-
-                <button class="soil_submit" type="submit" form="soil_form" value="Submit">give 'er!</button>
+                <div class="wrapper_radio">
+                    <label class="soil" for="clay"><span>clay</span></label>
+                    <input type="radio" name="soil" id="clay" value="clay" autocomplete="off" required>
+                    <label class="soil" for="loam"><span>loam</span></label>
+                    <input type="radio" name="soil" id="loam" value="loam" autocomplete="off" required>
+                    <label class="soil" for="sand"><span> sand</span></label>
+                    <input type="radio" name="soil" id="sand" value="sand" autocomplete="off" required>
+                </div>
+                <button class="form_submit" type="submit" form="soil_form" value="Submit">give 'er!</button>
             </form>
 
             <form class="hidden moisture_form" id="moisture_form">
                 <p><i class="fas fa-tint"></i>give them water! how much?</p>
-                <label for="dry">just a trickle</label>
-                <input type="radio" name="moisture" id="dry" value="dry" autocomplete="off" required>
-                <label for="moist">a good splash</label>
-                <input type="radio" name="moisture" id="moist" value="moist" autocomplete="off" required>
-                <label for="wet">monsoon!</label>
-                <input type="radio" name="moisture" id="wet" value="wet" autocomplete="off" required>
-
-                <button class="moisture_submit" type="submit" form="moisture_form" value="Submit">give 'er!</button>
+                <div class="wrapper_radio">
+                    <label for="dry"><span>just a trickle</span></label>
+                    <input type="radio" name="moisture" id="dry" value="dry" autocomplete="off" required>
+                    <label for="moist"><span>a good splash</span></label>
+                    <input type="radio" name="moisture" id="moist" value="moist" autocomplete="off" required>
+                    <label for="wet"><span>monsoon!</span></label>
+                    <input type="radio" name="moisture" id="wet" value="wet" autocomplete="off" required>
+                </div>
+                <button class="form_submit" type="submit" form="moisture_form" value="Submit">give 'er!</button>
             </form>
 
             <form class="hidden shade_form" id="shade_form">
                 <p><i class="fas fa-sun"></i>give them sun! how much?</p>
-                <label for="shadow">stick to the shadows...</label>
-                <input type="radio" name="shade" id="shadow" value="shadow" autocomplete="off" required>
-                <label for="partial_shade">a little dose of sun</label>
-                <input type="radio" name="shade" id="partial_shade" value="partial_shade" autocomplete="off" required>
-                <label for="full_sun">no cover!</label>
-                <input type="radio" name="shade" id="full_sun" value="full_sun" autocomplete="off" required>
-
-                <button class="shade_submit" type="submit" form="shade_form" value="Submit">give 'er!</button>
+                <div class="wrapper_radio">
+                    <label for="shadow"><span>stick to the shadows...</span></label>
+                    <input type="radio" name="shade" id="shadow" value="shadow" autocomplete="off" required>
+                    <label for="partial_shade"><span>a nice dose of sun</span></label>
+                    <input type="radio" name="shade" id="partial_shade" value="partial_shade" autocomplete="off" required>
+                    <label for="full_sun"><span>no cover!</span></label>
+                    <input type="radio" name="shade" id="full_sun" value="full_sun" autocomplete="off" required>
+                </div>
+                <button class="form_submit" type="submit" form="shade_form" value="Submit">give 'er!</button>
             </form>
 
             <form class="hidden size_form" id="size_form">
                 <p><i class="fas fa-arrows-alt-v"></i>give them room to grow! how much?</p>
-                <label for="small">a tiny nook, but it's enough</label>
-                <input type="radio" name="size" id="small" value="small" autocomplete="off" required>
-                <label for="medium">a cofortable amount of space</label>
-                <input type="radio" name="size" id="medium" value="medium" autocomplete="off" required>
-                <label for="large">sky's the limit!</label>
-                <input type="radio" name="size" id="large" value="large" autocomplete="off" required>
-
-
-                <button class="size_submit" type="submit" form="size_form" value="Submit">give 'er!</button>
+                <div class="wrapper_radio">
+                    <label for="small"><span>a tiny nook is enough</span></label>
+                    <input type="radio" name="size" id="small" value="small" autocomplete="off" required>
+                    <label for="medium"><span>a comfy amount</span></label>
+                    <input type="radio" name="size" id="medium" value="medium" autocomplete="off" required>
+                    <label for="large"><span>sky's the limit!</span></label>
+                    <input type="radio" name="size" id="large" value="large" autocomplete="off" required>
+                </div>
+                <button class="form_submit" type="submit" form="size_form" value="Submit">give 'er!</button>
             </form>
 
         </div>
 
-        <div class="wrapper">
+        <div class="wrapper_results">
             <section>
-                <div class="hidden black_walnut">
-                    <img src="" alt="">
+                <div class="hidden adult black_walnut">
+                    <div class="treeple_adult">
+                        <img src="assets/TamaSeed_BW.png" alt="A beautiful black walnut adult treeple: dark, sinuey, with a 'ready to take on the world' expression.">
+                    </div>
                     <h1>you grew a black walnut treeple!</h1>
                     <ul>
                         <li>Size: Up to 30 m tall</li>
@@ -111,10 +116,13 @@
                     <p>
                         The black walnut treeple roots release juglone, a substance that inhibits the growth of many other plants. However, many native trees tolerate juglone well, including maples, pawpaw, northern hackberry, honey locust, eastern redcedar, oaks, hickories, sycamore, eastern white cedar, hemlock and cherries, just to name a few.
                     </p>
+                    <button class="end_game" type="submit">grow another!</button>
                 </div>
 
-                <div class="hidden black_spruce">
-                    <img src="" alt="">
+                <div class="hidden adult black_spruce">
+                    <div class="treeple_adult">
+                        <img src="assets/TamaSeed_BS.png" alt="A beautiful, fully grown, black spruce treeple; tall, and slender, and happy-looking">
+                    </div>
                     <h1>you grew a black spruce treeple!</h1>
                     <ul>
                         <li>Size: Between 20 and 30 metres tall, trunk usually between 23 and 26 centimetres in diameter</li>
@@ -126,10 +134,13 @@
                     <p>
                         The red squirrel eats the tips of the black spruce treeple, which can create a thick dense clump of branches at the top of the tree.
                     </p>
+                    <button class="end_game" type="submit">grow another!</button>
                 </div>
 
-                <div class="hidden jack_pine">
-                    <img src="" alt="">
+                <div class="hidden adult jack_pine">
+                    <div class="treeple_adult">
+                        <img src="assets/TamaSeed_JP.png" alt="A beautiful, fully grown, Jack Pine treeple; charmingly jagged, and winking at you">
+                    </div>
                     <h1>you grew a jack pine treeple!</h1>
                     <ul>
                         <li>Size: Up to 24 metres tall, trunk is up to 60 centimetres in diameter</li>
@@ -141,10 +152,13 @@
                     <p>
                         Like other pines, the jack pine treeple thrives after forest fires. The heat opens up the pinecones to release seeds, and kills off competing plants.
                     </p>
+                    <button class="end_game" type="submit">grow another!</button>
                 </div>
 
-                <div class="hidden eastern_white_cedar">
-                    <img src="" alt="">
+                <div class="hidden adult eastern_white_cedar">
+                    <div class="treeple_adult">
+                        <img src="assets/TamaSeed_EWC.png" alt="A beautiful, fully grown, eastern white cedar treeple; fluffy, and cute, with an eager expression on their face">
+                    </div>
                     <h1>you grew an eastern white cedar treeple!</h1>
                     <ul>
                         <li>Size: 15 metres tall, trunk 30 centimetres in diameter</li>
@@ -156,10 +170,13 @@
                     <p>
                         Eastern white cedar trees more than 700 years old have been found in Ontario’s Niagara Escarpment!
                     </p>
+                    <button class="end_game" type="submit">grow another!</button>
                 </div>
 
-                <div class="hidden american_beech">
-                    <img src="" alt="">
+                <div class="hidden adult american_beech">
+                    <div class="treeple_adult">
+                        <img src="assets/TamaSeed_AB.png" alt="A beautiful, fully grown, american beech treeple; with it's expansive canopy and cute expression of awe">
+                    </div>
                     <h1>you grew an american beech treeple!</h1>
                     <ul>
                         <li>Size: Up to 25 metres tall</li>
@@ -171,9 +188,8 @@
                     <p>
                         The distinctive triangular nuts are eaten by people as well as wildlife.
                     </p>
+                    <button class="end_game" type="submit">grow another!</button>
                 </div>
-
-                <input class="hidden end_game" type="submit" value="grow another!">
 
             </section>
         </div>

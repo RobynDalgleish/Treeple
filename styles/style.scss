@@ -5,9 +5,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .visuallyhidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
 body {
-    // font-family: 'Nanum Pen Script', cursive;
     font-family: 'Amatic SC', cursive;
-    // font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 62.5%
 }
 
 // To make appear and disappear:
@@ -24,18 +23,21 @@ body {
 }
 
 // intro/start game page styles
-
 .svg-inline--fa.fa-tree {
     color: #7C7BB2;
+    margin: 0 20px 0 20px;
 }
 
-.intro .wrapper {
+.wrapper {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     height: 100vh;
+        p {
+            max-width: 900px;
+        }
 }
 
 .start_game {
@@ -46,12 +48,50 @@ body {
     border-radius: 20px;
     border: none;
     box-shadow:10px 10px 0px 0 #7C7BB2;
-    
+    font-size: 3rem;
 }
 
-// sprite styles
+.intro h1 {
+    font-size: 6rem;
+    margin: 0;
+}
 
+.intro p {
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin: 50px 0 50px 0;
+} 
+
+// sprite styles
 .sprite {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+        p {
+            position: relative;
+            top: 30px;
+            left: 70px;
+            z-index: 100;
+            font-size: 3rem;
+        }
+        p:before {
+            content: "/";
+            position: relative;
+            top: 60px;
+            left: -10px;
+        }
+}
+
+.treeple_adult{
     height: 50vh;
         img {
             object-fit: contain;
@@ -59,15 +99,109 @@ body {
         }
 }
 
-// general radio button styles
+// general form styles
 input[type=radio] {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
 
-
-// soil question button styles
-.soil:hover {
-    background-color: #A5C992;
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+        p {
+            margin: 0;
+        }
+        .wrapper_radio {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100vw;
+                label {
+                    background-image: url("../assets/TamaSeed_Bucket.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    font-size: 2.5rem;
+                    text-align: center;
+                    width: 33.33%;     
+                    height: 200px; 
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 1s;
+                    margin: 30px 0 30px 0;
+                    &:hover {
+                        transform: scale(1.3);
+                    }
+                }
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(#ffffff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+                }
+    
+        }
 }
+
+.form_submit {
+    background-image: url("../assets/TamaSeed_SeedNeutral1.png");
+    background-position: 45% 20%;
+    height: 80px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    box-shadow:10px 10px 0px 0 #C77EB4;
+    font-size: 3rem;
+}
+
+.svg-inline--fa {
+    color: #C77EB4;
+    margin: 0 20px 0 20px;
+}
+
+// result pages styles
+
+.end_game {
+    background-image: url("../assets/TamaSeed_SeedNeutral1.png");
+    background-position: 45% 20%;
+    height: 100px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    box-shadow:10px 10px 0px 0 #7C7BB2;
+    font-size: 3rem;
+}
+
+.wrapper_results {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+        .adult {
+            max-width: 900px;
+        }
+         h1 {
+            font-size: 3rem;
+        }
+        li, p {
+            font-family: 'Annie Use Your Telescope', cursive;
+            font-size: 2rem;
+            line-height: 2;
+    }
+}
+
+
