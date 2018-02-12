@@ -18,9 +18,9 @@ treeple.adults = [
     {   
         name: "black_spruce",
         size: ["medium", "large"],
-        moisture: ["dry", "moist", "wet"],
+        moisture: ["dry", "wet"],
         shade: ["partial_shade"],
-        soil: ["clay", "loam", "sand"],
+        soil: ["clay", "sand"],
         intolerant: [""],
         tally: 0
     },
