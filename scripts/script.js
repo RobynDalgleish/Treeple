@@ -72,7 +72,7 @@ treeple.adults = [
 treeple.start_to_planting = function() {
     $('.start_game').on('click', function (event) {
         event.preventDefault();
-        $('header').addClass("hidden");
+        $('header').fadeOut("slow");
         $('.sprite').fadeIn();
         $('.soil_form').fadeIn();
         treeple.start_timer("plant_prompt");
@@ -86,7 +86,7 @@ treeple.planting_to_water = function() {
         clearInterval(treeple.interval)
         // To get the addTally function to run for each seperate group of questions (which are connected by radio buttons with the same 'name', pass the addTally function a parameter that matches the question group similarity (in this case, 'soil'. Otherwise, when the user answers for the next group of questions, the code will detect the radio button that the user clicked before it (it is still in the html, just hidden), and duplicate that answer in the tally.)
         treeple.add_to_tally('soil');
-        $('.soil_form').fadeOut();
+        $('.soil_form').fadeOut("slow");
         $('.moisture_form').fadeIn();
         treeple.start_timer("water_prompt");
     });
@@ -97,7 +97,7 @@ treeple.water_to_sun = function() {
         event.preventDefault();
         clearInterval(treeple.interval)
         treeple.add_to_tally('moisture');
-        $('.moisture_form').fadeOut();
+        $('.moisture_form').fadeOut("slow");
         $('.shade_form').fadeIn();
         treeple.start_timer("shade_prompt");
     });
@@ -108,7 +108,7 @@ treeple.sun_to_space = function() {
         event.preventDefault();
         clearInterval(treeple.interval)
         treeple.add_to_tally('shade');
-        $('.shade_form').fadeOut();
+        $('.shade_form').fadeOut("slow");
         $('.size_form').fadeIn();
         treeple.start_timer("size_prompt");
     });
@@ -118,7 +118,7 @@ treeple.space_to_get_largest_tally = function() {
     $('.size_form').on('submit', function (event) {
         event.preventDefault();
         clearInterval(treeple.interval);
-        $('.size_form').fadeOut();
+        $('.size_form').fadeOut("slow");
         treeple.get_largest_tally('tally');
         $('.sprite').toggleClass("hidden")
     });
@@ -156,7 +156,7 @@ treeple.start_timer = function(hurry_promt_class) {
             $(".dead_seed").toggleClass("hidden")
             $(".main").toggleClass("hidden_important")
         }
-        if (set_timer === -5) {
+        if (set_timer === -3) {
             location.reload();
         }
         set_timer = set_timer - 1;

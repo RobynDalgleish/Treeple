@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Annie+Use+Your+Telescope" rel="stylesheet">
     <title>TREEPLE</title>
 </head>
@@ -49,12 +55,18 @@
             <form class="hidden soil_form" id="soil_form">
                 <p><i class="fas fa-caret-square-up"></i>plant them! in what soil?</p>
                 <div class="wrapper_radio">
-                    <label class="soil" for="clay"><span>clay</span></label>
                     <input type="radio" name="soil" id="clay" value="clay" autocomplete="off" required>
-                    <label class="soil" for="loam"><span>loam</span></label>
+                    <label class="soil" for="clay">
+                        <span>clay</span>
+                    </label>
                     <input type="radio" name="soil" id="loam" value="loam" autocomplete="off" required>
-                    <label class="soil" for="sand"><span> sand</span></label>
+                    <label class="soil" for="loam">
+                        <span>loam</span>
+                    </label>
                     <input type="radio" name="soil" id="sand" value="sand" autocomplete="off" required>
+                    <label class="soil" for="sand">
+                        <span> sand</span>
+                    </label>
                 </div>
                 <button class="form_submit" type="submit" form="soil_form" value="Submit">give 'er!</button>
             </form>
@@ -62,12 +74,18 @@
             <form class="hidden moisture_form" id="moisture_form">
                 <p><i class="fas fa-tint"></i>give them water! how much?</p>
                 <div class="wrapper_radio">
-                    <label for="dry"><span>just a trickle</span></label>
                     <input type="radio" name="moisture" id="dry" value="dry" autocomplete="off" required>
-                    <label for="moist"><span>a good splash</span></label>
+                    <label for="dry">
+                        <span>just a trickle</span>
+                    </label>
                     <input type="radio" name="moisture" id="moist" value="moist" autocomplete="off" required>
-                    <label for="wet"><span>monsoon!</span></label>
+                    <label for="moist">
+                        <span>a good splash</span>
+                    </label>
                     <input type="radio" name="moisture" id="wet" value="wet" autocomplete="off" required>
+                    <label for="wet">
+                        <span>monsoon!</span>
+                    </label>
                 </div>
                 <button class="form_submit" type="submit" form="moisture_form" value="Submit">give 'er!</button>
             </form>
@@ -75,12 +93,18 @@
             <form class="hidden shade_form" id="shade_form">
                 <p><i class="fas fa-sun"></i>give them sun! how much?</p>
                 <div class="wrapper_radio">
-                    <label for="shadow"><span>stick to the shadows...</span></label>
                     <input type="radio" name="shade" id="shadow" value="shadow" autocomplete="off" required>
-                    <label for="partial_shade"><span>a nice dose of sun</span></label>
+                    <label for="shadow">
+                        <span>stick to the shadows...</span>
+                    </label>
                     <input type="radio" name="shade" id="partial_shade" value="partial_shade" autocomplete="off" required>
-                    <label for="full_sun"><span>no cover!</span></label>
+                    <label for="partial_shade">
+                        <span>a nice dose of sun</span>
+                    </label>
                     <input type="radio" name="shade" id="full_sun" value="full_sun" autocomplete="off" required>
+                    <label for="full_sun">
+                        <span>no cover!</span>
+                    </label>
                 </div>
                 <button class="form_submit" type="submit" form="shade_form" value="Submit">give 'er!</button>
             </form>
@@ -88,12 +112,18 @@
             <form class="hidden size_form" id="size_form">
                 <p><i class="fas fa-arrows-alt-v"></i>give them room to grow! how much?</p>
                 <div class="wrapper_radio">
-                    <label for="small"><span>a tiny nook is enough</span></label>
                     <input type="radio" name="size" id="small" value="small" autocomplete="off" required>
-                    <label for="medium"><span>a comfy amount</span></label>
+                    <label for="small">
+                        <span>a tiny nook is enough</span>
+                    </label>
                     <input type="radio" name="size" id="medium" value="medium" autocomplete="off" required>
-                    <label for="large"><span>sky's the limit!</span></label>
+                    <label for="medium">
+                        <span>a comfy amount</span>
+                    </label>
                     <input type="radio" name="size" id="large" value="large" autocomplete="off" required>
+                    <label for="large">
+                        <span>sky's the limit!</span>
+                    </label>
                 </div>
                 <button class="form_submit" type="submit" form="size_form" value="Submit">give 'er!</button>
             </form>
