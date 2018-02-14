@@ -74,12 +74,14 @@ body {
     font-size: 3rem;
     margin-bottom: 20px 0 20px 0;
     transition: all .3s;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
     &:hover {
         color: #7C7BB2;
-        text-shadow: 10px 10px 2px #D7A346;
+        text-shadow: 3px 3px 1px #000000;
     }
     &:active {
-        transform: translate(5px);
+        transform: translate(5px, 5px);
         box-shadow:5px 5px 0px 0 #7C7BB2;
     }
 }
@@ -92,6 +94,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    max-width: 900px;
+    margin: 0 auto;
         img {
             object-fit: cover;
             height: 100%;
@@ -101,7 +105,7 @@ body {
         p {
             position: absolute;
             top: 30px;
-            right: 25vw;
+            right: 11vw;
             z-index: 100;
             font-size: 2rem;
         }
@@ -121,6 +125,7 @@ input[type=radio] {
     opacity: 0;
     &:checked + label {
         color: #E5C345;
+        text-shadow: 3px 3px 1px #000000;
     }
 }
 
@@ -140,6 +145,7 @@ form {
             flex-wrap: wrap;
             justify-content: center;
             width: 100vw;
+            max-width: 900px;
                 label {
                     background-image: url("../assets/TamaSeed_Bucket.png");
                     background-size: contain;
@@ -186,13 +192,15 @@ form {
     font-size: 2.5rem;
     transition: all .3s;
     margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
     &:hover {
         color: #C77EB4;
-    text-shadow: 10px 10px 2px #D7A346;
+        text-shadow: 3px 3px 1px #000000;
 }
     &:active {
-        transform: translate(5px);
-        box-shadow:5px 5px 0px 0 #C77EB4;
+        transform: translate(5px, 5px);
+        box-shadow: 5px 5px 0px 0 #C77EB4;
     }
 }
 
@@ -221,12 +229,14 @@ form {
     box-shadow:10px 10px 0px 0 #7C7BB2;
     font-size: 3rem;
     margin-bottom: 50px;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
     &:hover {
         color: #7C7BB2;
-    text-shadow: 10px 10px 2px #D7A346;
+        text-shadow: 3px 3px 1px #000000;
     }
     &:active {
-        transform: translate(5px);
+        transform: translate(5px, 5px);
         box-shadow:5px 5px 0px 0 #7C7BB2;
     }
 }

@@ -218,14 +218,16 @@ body {
   margin-bottom: 20px 0 20px 0;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
-  transition: all .3s; }
+  transition: all .3s;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000; }
   .start_game:hover {
     color: #7C7BB2;
-    text-shadow: 10px 10px 2px #D7A346; }
+    text-shadow: 3px 3px 1px #000000; }
   .start_game:active {
-    -webkit-transform: translate(5px);
-    -ms-transform: translate(5px);
-    transform: translate(5px);
+    -webkit-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
     -webkit-box-shadow: 5px 5px 0px 0 #7C7BB2;
     box-shadow: 5px 5px 0px 0 #7C7BB2; }
 
@@ -242,7 +244,9 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto; }
   .sprite img {
     -o-object-fit: cover;
     object-fit: cover;
@@ -252,7 +256,7 @@ body {
   .sprite p {
     position: absolute;
     top: 30px;
-    right: 25vw;
+    right: 11vw;
     z-index: 100;
     font-size: 2rem; }
   .sprite p:before {
@@ -267,7 +271,8 @@ input[type=radio] {
   z-index: -1;
   opacity: 0; }
   input[type=radio]:checked + label {
-    color: #E5C345; }
+    color: #E5C345;
+    text-shadow: 3px 3px 1px #000000; }
 
 form {
   display: -webkit-box;
@@ -300,7 +305,8 @@ form {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 100vw; }
+    width: 100vw;
+    max-width: 900px; }
     form .wrapper_radio label {
       background-image: url("../assets/TamaSeed_Bucket.png");
       background-size: contain;
@@ -367,14 +373,16 @@ form {
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000; }
   .form_submit:hover {
     color: #C77EB4;
-    text-shadow: 10px 10px 2px #D7A346; }
+    text-shadow: 3px 3px 1px #000000; }
   .form_submit:active {
-    -webkit-transform: translate(5px);
-    -ms-transform: translate(5px);
-    transform: translate(5px);
+    -webkit-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
     -webkit-box-shadow: 5px 5px 0px 0 #C77EB4;
     box-shadow: 5px 5px 0px 0 #C77EB4; }
 
@@ -399,14 +407,16 @@ form {
   -webkit-box-shadow: 10px 10px 0px 0 #7C7BB2;
   box-shadow: 10px 10px 0px 0 #7C7BB2;
   font-size: 3rem;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000; }
   .end_game:hover {
     color: #7C7BB2;
-    text-shadow: 10px 10px 2px #D7A346; }
+    text-shadow: 3px 3px 1px #000000; }
   .end_game:active {
-    -webkit-transform: translate(5px);
-    -ms-transform: translate(5px);
-    transform: translate(5px);
+    -webkit-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
     -webkit-box-shadow: 5px 5px 0px 0 #7C7BB2;
     box-shadow: 5px 5px 0px 0 #7C7BB2; }
 

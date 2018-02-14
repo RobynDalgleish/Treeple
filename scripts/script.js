@@ -192,7 +192,7 @@ treeple.get_largest_tally = function() {
     const winners = treeple.adults.filter(tree => tree.tally === winning_tally_number);
 
     // ---------------------------------------------
-    // OTHER OPTION FOR ABOVE FUNCTION (That I thought didn't work, but actually does, so imma leave it here):
+    // OTHER OPTION FOR ABOVE FUNCTION (That I thought didn't work, but actually does, so imma leave it here because it uses underscore.js):
 
     // const group_by_tally =  _.groupBy(treeple.adults, 'tally');
     // console.log('GROUP BY TALLY', group_by_tally);
