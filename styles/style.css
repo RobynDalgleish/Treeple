@@ -148,7 +148,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 body {
   font-family: 'Amatic SC', sans-serif;
   font-size: 62.5%;
-  padding: 10px;
+  padding: 20px;
   background: url("../assets/concrete-texture.png"); }
 
 .hidden {
@@ -201,29 +201,29 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100vh; }
+  min-height: 90vh; }
   .wrapper p {
     max-width: 900px; }
 
 .start_game {
   background-image: url("../assets/TamaSeed_SeedNeutral1.png");
   background-position: 45% 20%;
-  height: 100px;
-  width: 300px;
   border-radius: 20px;
+  margin-bottom: 50px;
   border: none;
   -webkit-box-shadow: 10px 10px 0px 0 #7C7BB2;
   box-shadow: 10px 10px 0px 0 #7C7BB2;
-  font-size: 3rem;
-  margin-bottom: 20px 0 20px 0;
+  font-size: 2.5rem;
+  padding: 15px 50px 15px 50px;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
   border-bottom: 1px solid #000000;
-  border-right: 1px solid #000000; }
+  border-right: 1px solid #000000;
+  outline: none; }
   .start_game:hover {
     color: #7C7BB2;
-    text-shadow: 3px 3px 1px #000000; }
+    text-shadow: 2px 2px 0 #000000; }
   .start_game:active {
     -webkit-transform: translate(5px, 5px);
     -ms-transform: translate(5px, 5px);
@@ -232,7 +232,7 @@ body {
     box-shadow: 5px 5px 0px 0 #7C7BB2; }
 
 .sprite {
-  height: 40vh;
+  width: 230px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -245,34 +245,28 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
-  max-width: 900px;
+  max-width: 250px;
   margin: 0 auto; }
   .sprite img {
     -o-object-fit: cover;
     object-fit: cover;
-    height: 100%;
+    width: 100%;
     position: relative;
     z-index: 50; }
   .sprite p {
     position: absolute;
     top: 30px;
-    right: 11vw;
+    left: 100%;
     z-index: 100;
-    font-size: 2rem; }
+    font-size: 2rem;
+    width: 350px;
+    text-align: left; }
   .sprite p:before {
     content: "/";
     position: absolute;
-    top: 60px;
-    left: -10px;
+    top: 50px;
+    left: -15px;
     z-index: 100; }
-
-input[type=radio] {
-  position: absolute;
-  z-index: -1;
-  opacity: 0; }
-  input[type=radio]:checked + label {
-    color: #E5C345;
-    text-shadow: 3px 3px 1px #000000; }
 
 form {
   display: -webkit-box;
@@ -291,7 +285,8 @@ form {
   justify-content: center;
   font-size: 3rem; }
   form p {
-    margin: 0; }
+    margin: 0;
+    font-size: 2.5rem; }
   form .wrapper_radio {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -300,22 +295,19 @@ form {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     width: 100vw;
-    max-width: 900px; }
+    max-width: 1000px; }
     form .wrapper_radio label {
       background-image: url("../assets/TamaSeed_Bucket.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      font-size: 2.5rem;
       text-align: center;
       width: 33.33%;
-      height: 200px;
+      height: 150px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -323,63 +315,51 @@ form {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      text-align: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      -webkit-transition: all .5s;
-      -o-transition: all .5s;
-      transition: all .5s;
-      margin: 40px 0 50px 0; }
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+      margin: 30px 0 40px 0;
+      font-size: 2.5rem;
+      border-radius: 50%;
+      padding: 0 10px 0 10px; }
       form .wrapper_radio label:hover {
         -webkit-transform: scale(1.3);
         -ms-transform: scale(1.3);
         transform: scale(1.3); }
-    form .wrapper_radio span {
-      border-radius: 50%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      text-align: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background: -webkit-radial-gradient(#ffffff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-      background: -o-radial-gradient(#ffffff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-      background: radial-gradient(#ffffff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)); }
+    form .wrapper_radio input[type=radio] {
+      position: absolute;
+      z-index: -1;
+      opacity: 0; }
+      form .wrapper_radio input[type=radio]:checked + label {
+        color: #E5C345;
+        text-shadow: 2px 2px 0px #000000; }
 
-.form_submit {
+.form_submit, .mid_end_game {
   background-image: url("../assets/TamaSeed_SeedNeutral1.png");
   background-position: 42% 30%;
-  height: 80px;
-  width: 200px;
+  padding: 15px 50px 15px 50px;
   border-radius: 20px;
   border: none;
   -webkit-box-shadow: 10px 10px 0px 0 #C77EB4;
   box-shadow: 10px 10px 0px 0 #C77EB4;
-  font-size: 2.5rem;
+  font-size: 2rem;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border-bottom: 1px solid #000000;
-  border-right: 1px solid #000000; }
-  .form_submit:hover {
+  border-right: 1px solid #000000;
+  outline: none; }
+  .form_submit:hover, .mid_end_game:hover {
     color: #C77EB4;
-    text-shadow: 3px 3px 1px #000000; }
-  .form_submit:active {
+    text-shadow: 2px 2px 0 #000000; }
+  .form_submit:active, .mid_end_game:active {
     -webkit-transform: translate(5px, 5px);
     -ms-transform: translate(5px, 5px);
     transform: translate(5px, 5px);
@@ -390,29 +370,22 @@ form {
   color: #C77EB4;
   margin: 0 20px 0 0; }
 
-.treeple_adult {
-  height: 70vh; }
-  .treeple_adult img {
-    -o-object-fit: contain;
-    object-fit: contain;
-    height: 100%; }
-
 .end_game {
   background-image: url("../assets/TamaSeed_SeedNeutral1.png");
   background-position: 45% 20%;
-  height: 100px;
-  width: 300px;
+  padding: 15px 50px 15px 50px;
   border-radius: 20px;
   border: none;
   -webkit-box-shadow: 10px 10px 0px 0 #7C7BB2;
   box-shadow: 10px 10px 0px 0 #7C7BB2;
-  font-size: 3rem;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
+  margin: 0 0 50px 0;
   border-bottom: 1px solid #000000;
-  border-right: 1px solid #000000; }
+  border-right: 1px solid #000000;
+  outline: none; }
   .end_game:hover {
     color: #7C7BB2;
-    text-shadow: 3px 3px 1px #000000; }
+    text-shadow: 2px 2px 0 #000000; }
   .end_game:active {
     -webkit-transform: translate(5px, 5px);
     -ms-transform: translate(5px, 5px);
@@ -434,42 +407,66 @@ form {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
-  .wrapper_results .adult {
-    max-width: 900px; }
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 900px; }
+  .wrapper_results .treeple_adult {
+    margin: 0 auto;
+    max-width: 700px;
+    height: 450px; }
+    .wrapper_results .treeple_adult img {
+      -o-object-fit: contain;
+      object-fit: contain;
+      max-width: 100%;
+      height: 100%; }
   .wrapper_results h1 {
-    font-size: 3rem; }
-  .wrapper_results li, .wrapper_results p {
+    font-size: 2.5rem;
+    margin: 0; }
+  .wrapper_results ul {
+    margin: 20px 0 0 0;
+    padding: 0; }
+  .wrapper_results li {
     font-family: 'Annie Use Your Telescope', sans-serif;
-    font-size: 2rem;
-    line-height: 2; }
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 20px; }
+  .wrapper_results p {
+    font-family: 'Annie Use Your Telescope', sans-serif;
+    font-size: 1.5rem;
+    margin: 30px 0 30px 0;
+    text-align: left; }
 
 @media (max-width: 460px) {
-  .title {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-    .title h1 {
-      line-height: 1; }
+  .title h1 {
+    line-height: 1; }
   .svg-inline--fa.fa-tree {
     font-size: 3rem;
-    margin: 0; }
+    margin: 0 10px 0 10px; }
+  .intro h1 {
+    font-size: 4rem; }
   .intro p {
-    margin: 10px 0 20px 0; }
-  .start_game {
-    width: 250px; }
+    margin: 30px 0 30px 0;
+    font-size: 2rem; }
+  .start_game, .form_submit, .end_game {
+    font-size: 1.8rem;
+    padding: 10px 40px 10px 40px;
+    border-radius: 15px; }
+  form p {
+    font-size: 1.8rem; }
   form .wrapper_radio label {
     height: 100px;
-    font-size: 2rem;
-    line-height: 1;
-    margin: 10px 0 15px 0; }
-  form .wrapper_radio span {
-    background: -webkit-radial-gradient(#ffffff, rgba(255, 255, 255, 0));
-    background: -o-radial-gradient(#ffffff, rgba(255, 255, 255, 0));
-    background: radial-gradient(#ffffff, rgba(255, 255, 255, 0)); }
-  .wrapper_results li, .wrapper_results p {
-    line-height: 1.2; } }
+    font-size: 1.5rem;
+    line-height: 1; }
+  .wrapper_results li {
+    line-height: 1.1;
+    font-size: 1rem; }
+  .wrapper_results p {
+    line-height: 1.1;
+    font-size: 1rem; }
+  .wrapper_results h1 {
+    font-size: 2.5rem; }
+  .wrapper_results .treeple_adult .spruce {
+    width: 50vw; } }
 
 @media (max-width: 700px) {
   form .wrapper_radio label {
@@ -480,14 +477,15 @@ form {
     margin-top: 80px; }
     .sprite p {
       position: absolute;
-      top: -100px;
-      right: 0;
+      top: -75px;
       left: 0;
       z-index: 100;
-      font-size: 2rem; }
+      font-size: 1.8rem;
+      text-align: center;
+      width: 200px; }
       .sprite p:before {
         content: "|";
         position: absolute;
-        top: 40px;
+        top: 35px;
         left: 50%;
         z-index: 100; } }

@@ -9,7 +9,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 body {
     font-family: 'Amatic SC', sans-serif;
     font-size: 62.5%;
-    padding: 10px;
+    padding: 20px;
     background: url('../assets/concrete-texture.png');
 }
 
@@ -21,10 +21,6 @@ body {
 .hidden_important {
     display: none;
 }
-
-// .active {
-//     display: block;
-// }
 
 // intro/start game page styles
 .svg-inline--fa.fa-tree {
@@ -57,7 +53,7 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 90vh;
         p {
             max-width: 900px;
         }
@@ -66,19 +62,19 @@ body {
 .start_game {
     background-image: url("../assets/TamaSeed_SeedNeutral1.png");
     background-position: 45% 20%;
-    height: 100px;
-    width: 300px;
     border-radius: 20px;
+    margin-bottom: 50px;
     border: none;
     box-shadow:10px 10px 0px 0 #7C7BB2;
-    font-size: 3rem;
-    margin-bottom: 20px 0 20px 0;
+    font-size: 2.5rem;
+    padding: 15px 50px 15px 50px;
     transition: all .3s;
     border-bottom: 1px solid #000000;
     border-right: 1px solid #000000;
+    outline: none;
     &:hover {
         color: #7C7BB2;
-        text-shadow: 3px 3px 1px #000000;
+        text-shadow: 2px 2px 0 #000000;
     }
     &:active {
         transform: translate(5px, 5px);
@@ -88,47 +84,39 @@ body {
 
 // sprite styles
 .sprite {
-    height: 40vh;
+    width: 230px;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 900px;
+    max-width: 250px;
     margin: 0 auto;
         img {
             object-fit: cover;
-            height: 100%;
+            width: 100%;
             position: relative;
             z-index: 50;
         }
         p {
             position: absolute;
             top: 30px;
-            right: 11vw;
+            left: 100%;
             z-index: 100;
             font-size: 2rem;
+            width: 350px;
+            text-align: left;
         }
         p:before {
             content: "/";
             position: absolute;
-            top: 60px;
-            left: -10px;
+            top: 50px;
+            left: -15px;
             z-index: 100;
         }
 }
 
 // general form styles
-input[type=radio] {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    &:checked + label {
-        color: #E5C345;
-        text-shadow: 3px 3px 1px #000000;
-    }
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -138,65 +126,64 @@ form {
     font-size: 3rem;
         p {
             margin: 0;
+            font-size: 2.5rem;
         }
         .wrapper_radio {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
             justify-content: center;
             width: 100vw;
-            max-width: 900px;
+            max-width: 1000px;
                 label {
                     background-image: url("../assets/TamaSeed_Bucket.png");
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
-                    font-size: 2.5rem;
                     text-align: center;
                     width: 33.33%;     
-                    height: 200px; 
+                    height: 150px; 
                     display: flex;
                     flex-direction: column;
-                    text-align: center;
                     align-items: center;
                     justify-content: center;
-                    transition: all .5s;
-                    margin:40px 0 50px 0;
+                    transition: all .3s;
+                    margin:30px 0 40px 0;
+                    font-size: 2.5rem;
+                    border-radius: 50%;
+                    padding: 0 10px 0 10px;
                     &:hover {
                         transform: scale(1.3);
                     }
                 }
-                span {
-                    border-radius: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    height: 100%;
-                    background: radial-gradient(#ffffff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+                input[type=radio] {
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                    &:checked + label {
+                        color: #E5C345;
+                        text-shadow: 2px 2px 0px #000000;
+                    }
                 }
     
         }
 }
 
-.form_submit {
+.form_submit, .mid_end_game {
     background-image: url("../assets/TamaSeed_SeedNeutral1.png");
     background-position: 42% 30%;
-    height: 80px;
-    width: 200px;
+    padding: 15px 50px 15px 50px;
     border-radius: 20px;
     border: none;
     box-shadow:10px 10px 0px 0 #C77EB4;
-    font-size: 2.5rem;
+    font-size: 2rem;
     transition: all .3s;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-bottom: 1px solid #000000;
     border-right: 1px solid #000000;
+    outline: none;
     &:hover {
         color: #C77EB4;
-        text-shadow: 3px 3px 1px #000000;
+        text-shadow: 2px 2px 0 #000000;
 }
     &:active {
         transform: translate(5px, 5px);
@@ -210,30 +197,21 @@ form {
 }
 
 // result pages styles
-
-.treeple_adult{
-    height: 70vh;
-        img {
-            object-fit: contain;
-            height: 100%;
-        }
-}
-
 .end_game {
     background-image: url("../assets/TamaSeed_SeedNeutral1.png");
     background-position: 45% 20%;
-    height: 100px;
-    width: 300px;
+    padding: 15px 50px 15px 50px;
     border-radius: 20px;
     border: none;
     box-shadow:10px 10px 0px 0 #7C7BB2;
-    font-size: 3rem;
-    margin-bottom: 50px;
+    font-size: 2.5rem;
+    margin: 0 0 50px 0;
     border-bottom: 1px solid #000000;
     border-right: 1px solid #000000;
+    outline: none;
     &:hover {
         color: #7C7BB2;
-        text-shadow: 3px 3px 1px #000000;
+        text-shadow: 2px 2px 0 #000000;
     }
     &:active {
         transform: translate(5px, 5px);
@@ -247,16 +225,47 @@ form {
     text-align: center;
     align-items: center;
     justify-content: center;
-        .adult {
-            max-width: 900px;
+    margin: 0 auto;
+    max-width: 900px;
+        .treeple_adult{
+            margin: 0 auto;
+            max-width: 700px;
+            height: 450px;
+                // .spruce {
+                //     max-width: 30vw;
+                //     max-height: 70vh;
+                // }
+                // .cedar {
+                //     max-width: 50vw;
+                // }
+                img {
+                    object-fit: contain;
+                    max-width: 100%;
+                    height: 100%;
+                }
         }
          h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
+            margin: 0;
         }
-        li, p {
+        ul {
+            margin: 20px 0 0 0;
+            padding: 0;
+        }    
+        li {
             font-family: 'Annie Use Your Telescope', sans-serif;
-            font-size: 2rem;
-            line-height: 2;
-    }
+            font-size: 1.5rem;
+            text-align: left;
+            margin-left: 20px;
+        }
+        p {
+            font-family: 'Annie Use Your Telescope', sans-serif;
+            font-size: 1.5rem;
+            margin: 30px 0 30px 0;
+            text-align: left;
+        }
 }
+
+
+
 @import "components/media_queries";

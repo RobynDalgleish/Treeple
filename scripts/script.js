@@ -6,52 +6,52 @@ const treeple = {};
 treeple.adults = [
 
     {   
-        name: "black_walnut",
-        size: ["large"],
-        moisture: ["wet"],
-        shade: ["full_sun"],
-        soil: ["loam"],
-        intolerant: ["shade"],
+        name: 'black_walnut',
+        size: ['large'],
+        moisture: ['wet'],
+        shade: ['full_sun'],
+        soil: ['loam'],
+        intolerant: ['shade'],
         tally: 0
     },
 
     {   
-        name: "black_spruce",
-        size: ["medium", "large"],
-        moisture: ["dry", "wet"],
-        shade: ["partial_shade"],
-        soil: ["clay", "sand"],
-        intolerant: [""],
+        name: 'black_spruce',
+        size: ['medium', 'large'],
+        moisture: ['dry', 'wet'],
+        shade: ['partial_shade'],
+        soil: ['clay', 'sand'],
+        intolerant: [''],
         tally: 0
     },
 
     {   
-        name: "jack_pine",
-        size: ["medium"],
-        moisture: ["dry"],
-        shade: ["full_sun"],
-        soil: ["sand"],
-        intolerant: ["shade"],
+        name: 'jack_pine',
+        size: ['medium'],
+        moisture: ['dry'],
+        shade: ['full_sun'],
+        soil: ['sand'],
+        intolerant: ['shade'],
         tally: 0
     },
 
     {
-        name: "eastern_white_cedar",
-        size: ["small"],
-        moisture: ["wet"],
-        shade: ["partial_shade"],
-        soil: ["clay"],
-        intolerant: [""],
+        name: 'eastern_white_cedar',
+        size: ['small'],
+        moisture: ['wet'],
+        shade: ['partial_shade'],
+        soil: ['clay'],
+        intolerant: [''],
         tally: 0
     },
 
     {
-        name: "american_beech",
-        size: ["medium"],
-        moisture: ["wet"],
-        shade: ["shadow"],
-        soil: ["loam"],
-        intolerant: [""],
+        name: 'american_beech',
+        size: ['medium'],
+        moisture: ['wet'],
+        shade: ['shadow'],
+        soil: ['loam'],
+        intolerant: [''],
         tally: 0
     },
 
@@ -72,10 +72,10 @@ treeple.adults = [
 treeple.start_to_planting = function() {
     $('.start_game').on('click', function (event) {
         event.preventDefault();
-        $('header').fadeOut("slow");
+        $('header').fadeOut('slow');
         $('.sprite').fadeIn();
         $('.soil_form').fadeIn();
-        treeple.start_timer("plant_prompt");
+        treeple.start_timer('plant_prompt');
         $('.normal_seed_float').removeClass('hidden');
     });
 };
@@ -83,80 +83,96 @@ treeple.start_to_planting = function() {
 treeple.planting_to_water = function() {
     $('.soil_form').on('submit', function (event) {
         event.preventDefault();
-        clearInterval(treeple.interval)
+        treeple.resetTimerStates();
         // To get the addTally function to run for each seperate group of questions (which are connected by radio buttons with the same 'name', pass the addTally function a parameter that matches the question group similarity (in this case, 'soil'. Otherwise, when the user answers for the next group of questions, the code will detect the radio button that the user clicked before it (it is still in the html, just hidden), and duplicate that answer in the tally.)
         treeple.add_to_tally('soil');
-        $('.soil_form').fadeOut("slow");
+        $('.soil_form').fadeOut('slow');
         $('.moisture_form').fadeIn();
-        treeple.start_timer("water_prompt");
+        treeple.start_timer('water_prompt');
     });
 };
 
 treeple.water_to_sun = function() {
     $('.moisture_form').on('submit', function (event) {
         event.preventDefault();
-        clearInterval(treeple.interval)
+        treeple.resetTimerStates();
         treeple.add_to_tally('moisture');
-        $('.moisture_form').fadeOut("slow");
+        $('.moisture_form').fadeOut('slow');
         $('.shade_form').fadeIn();
-        treeple.start_timer("shade_prompt");
+        treeple.start_timer('shade_prompt');
     });
 };
 
 treeple.sun_to_space = function() {
     $('.shade_form').on('submit', function (event) {
         event.preventDefault();
-        clearInterval(treeple.interval)
+        treeple.resetTimerStates();
         treeple.add_to_tally('shade');
-        $('.shade_form').fadeOut("slow");
+        $('.shade_form').fadeOut('slow');
         $('.size_form').fadeIn();
-        treeple.start_timer("size_prompt");
+        treeple.start_timer('size_prompt');
     });
 };
 
 treeple.space_to_get_largest_tally = function() {
     $('.size_form').on('submit', function (event) {
         event.preventDefault();
-        clearInterval(treeple.interval);
-        $('.size_form').fadeOut("slow");
+        treeple.resetTimerStates();
+        $('.size_form').fadeOut('slow');
         treeple.get_largest_tally('tally');
-        $('.sprite').toggleClass("hidden")
+        $('.sprite').toggleClass('hidden')
     });
 };
 
-treeple.start_timer = function(hurry_promt_class) {
+treeple.resetTimerStates = function() {
+    clearInterval(treeple.interval);
+
+    clearTimeout(treeple.timeout);
+    $(`.hurry`).fadeOut();
+    $('.hurry_seed').addClass('hidden');
+    $('.main').removeClass('hidden_important'); 
+    
+    clearTimeout(treeple.clearHappyTimeout);
+    $('.happy_seed').addClass('hidden');
+    $('.main').removeClass('hidden_important');
+}
+
+treeple.start_timer = function(hurry_prompt_class) {
     let set_timer = 25;
     // Makes code inside the setInterval function run on the specified interval. Ex: every second, set_timer = set_timer - 1.
     treeple.interval = setInterval(function () {
-        $(".main").toggleClass("hidden");
-
+        $('.main').toggleClass('hidden');
+        console.log($('.main').attr('class'))
         if (set_timer === 25) {
-            $(".happy_seed").toggleClass("hidden")
-            $(".main").toggleClass("hidden_important")
+            $('.happy_seed').toggleClass('hidden');
+            $('.main').toggleClass('hidden_important');
             // Make it display a div at 20seconds. Use setTimeout to make the div dissapear on a 3 sec delay
-            setTimeout(function () {
-                $(".happy_seed").addClass("hidden");
-                $(".main").removeClass("hidden_important")
+            treeple.clearHappyTimeout = setTimeout(function () {
+                $('.happy_seed').addClass('hidden');
+                $('.main').removeClass('hidden_important');
                 // denotes miliseconds
             }, 2000);
         };
 
         if (set_timer === 15) {
-            $(`.hurry.${hurry_promt_class}`).fadeIn();
-            $(".hurry_seed").toggleClass("hidden")
-            $(".main").addClass("hidden_important")
-            setTimeout(function () {
-                $(`.hurry.${hurry_promt_class}`).fadeOut();
-                $(".hurry_seed").toggleClass("hidden");
-                $(".main").toggleClass("hidden_important")
+            $(`.hurry.${hurry_prompt_class}`).fadeIn();
+            $('.hurry_seed').toggleClass('hidden');
+            $('.main').addClass('hidden_important');
+            treeple.timeout = setTimeout(function () {
+                $(`.hurry.${hurry_prompt_class}`).fadeOut();
+                $('.hurry_seed').toggleClass('hidden');
+                $('.main').toggleClass('hidden_important')
             }, 3000);
         };
         if (set_timer === 0) {
-            $("input").attr("disabled", true);
-            $(".dead_seed").toggleClass("hidden")
-            $(".main").toggleClass("hidden_important")
+            $('input').attr("disabled", true);
+            $('.dead_seed').toggleClass('hidden');
+            $('.main').toggleClass('hidden_important');
+            $('.form_submit').addClass('hidden');
+            $('.mid_end_game').toggleClass('hidden');
         }
-        if (set_timer === -3) {
+
+        if (set_timer === -5) {
             location.reload();
         }
         set_timer = set_timer - 1;
@@ -234,10 +250,13 @@ treeple.get_largest_tally = function() {
 };
 
 treeple.new_game = function(){
+    $('.mid_end_game').on('click', function (e) {
+        location.reload();
+    });
     $('.end_game').on('click', function (e) {
         location.reload();
     });
-    $('.wrapper_results').toggleClass(hidden);
+    $('.wrapper_results').toggleClass('hidden');
 };
 
 treeple.init = function() {
