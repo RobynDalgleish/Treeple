@@ -11,6 +11,7 @@ body {
     font-size: 62.5%;
     padding: 20px;
     background: url('../assets/concrete-texture.png');
+    min-height: 100vh;
 }
 
 // To make appear and disappear:
@@ -53,7 +54,7 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 85vh;
         p {
             max-width: 900px;
         }
@@ -84,7 +85,7 @@ body {
 
 // sprite styles
 .sprite {
-    width: 230px;
+    width: 190px;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -123,10 +124,9 @@ form {
     text-align: center;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
         p {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
         }
         .wrapper_radio {
             display: flex;
@@ -141,16 +141,15 @@ form {
                     background-position: center;
                     text-align: center;
                     width: 33.33%;     
-                    height: 150px; 
+                    height: 200px; 
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     transition: all .3s;
-                    margin:30px 0 40px 0;
-                    font-size: 2.5rem;
+                    margin: 10px 0 30px 0;
+                    font-size: 2rem;
                     border-radius: 50%;
-                    padding: 0 10px 0 10px;
                     &:hover {
                         transform: scale(1.3);
                     }
@@ -231,13 +230,6 @@ form {
             margin: 0 auto;
             max-width: 700px;
             height: 450px;
-                // .spruce {
-                //     max-width: 30vw;
-                //     max-height: 70vh;
-                // }
-                // .cedar {
-                //     max-width: 50vw;
-                // }
                 img {
                     object-fit: contain;
                     max-width: 100%;
@@ -263,6 +255,48 @@ form {
             font-size: 1.5rem;
             margin: 30px 0 30px 0;
             text-align: left;
+        }
+}
+
+// footer
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Annie Use Your Telescope', sans-serif;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+        .Robyn, .Laurel {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 30px 0 30px;
+                a, div {
+                    color: #000000;
+                    &:hover {
+                        color: #C77EB4;
+                    }
+                }
+        }
+        .svg-inline--fa {
+            font-size: 1.8rem;
+            margin: 0 0 0 20px;
+        }
+        a {
+            color: #000000;
+            &:hover {
+                color: #C77EB4;
+            }
+        }
+        p{
+            margin: 5px;
+        }
+        img {
+            width: 50px;
+            border-radius: 5px;
+            margin-right: 20px;
         }
 }
 
